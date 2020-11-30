@@ -15,21 +15,29 @@ public class Batiment {
         }
     }
 
-    protected void ajouterColon(){
+    protected Boolean ajouterColon(){
         System.out.println(("Nb colon " + nbColon));
-        if(nbColon == capacite) System.out.println("Impossible d'ajouter de colon, limite atteinte");
+        if(nbColon == capacite) {
+            System.out.println("Impossible d'ajouter de colon, limite atteinte");
+            return false;
+        }
         else {
             nbColon += 1;
             System.out.println(("Un colon a été ajouté"));
             System.out.println(("Nb colon " + nbColon));
+            return true;
         }
     }
 
-    protected void retirerColon(){
-        if(nbColon == 0) System.out.println("Operation impossible, il n'y pas de colon à retirer");
+    protected Boolean retirerColon(){
+        if(nbColon == 0){
+            System.out.println("Operation impossible, il n'y pas de colon à retirer");
+            return false;
+        }
         else {
             nbColon -= 1;
             System.out.println(("Un colon a été retiré"));
+            return true;
         }
     }
 
@@ -47,11 +55,13 @@ public class Batiment {
         }
     }
 
-    protected void activation(){
+    protected Boolean activation(){
         if (nbColon == capacite){
             obtentionRecompense();
+            return true;
         }else{
             System.out.println("Il n'y a pas assez de colons");
+            return false;
         }
     }
 

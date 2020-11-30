@@ -5,6 +5,8 @@ public class AffichageBat {
 
     public static void main(String[] args) {
 
+
+
         JFrame f = new JFrame("Contruction batiment");
 
         JButton construireBat=new JButton("Construire bâtiment");
@@ -51,10 +53,16 @@ public class AffichageBat {
                 activationButt.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent actionEvent) {
-                       bat1.activation();
+                        if(bat1.activation()){
+                            f.remove(ajouterColonButt);
+                            f.remove(retirerColonButt);
+                            f.remove(activationButt);
+                            JLabel batimentActiveLabel = new JLabel("Batiment actif");
+                            batimentActiveLabel.setBounds(100,200,100,30);
+                            f.add(batimentActiveLabel);
+                        }
                     }
-                }
-                );
+                });
 
                 f.add(nomBatLabel);
                 f.add(capaciteLabel);
