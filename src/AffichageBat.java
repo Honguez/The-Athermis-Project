@@ -70,6 +70,7 @@ public class AffichageBat {
         f.setSize(400,400);
         f.setLayout(null);
         f.setVisible(true);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
 }
