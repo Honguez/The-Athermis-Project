@@ -16,9 +16,15 @@ public class TestDes {
 
         Dès j1 = new Dès(3,1); // Creation du dès numero 3 du joueur 1
         Dès j2 = new Dès(2,2);// Creation du dès numero 2 du joueur 2
+        Dès j3 = new Dès(4,3);
+        Dès j4 = new Dès(6,4);
+        Dès j5 = new Dès(1,5);
 
-        frame.add(j1.PlacementDès());
-        // frame.add(j2.PlacementDès());
+        frame.add(j1.PlacementDès(100,100));
+        frame.add(j2.PlacementDès(150,100));
+        frame.add(j3.PlacementDès(200,100));
+        frame.add(j4.PlacementDès(250,100));
+        frame.add(j5.PlacementDès(300,100));
 
         frame.validate();
     }

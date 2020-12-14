@@ -9,7 +9,7 @@ public class Dès{
     Random rand = new Random();
     int face;
     int noJoueur;
-    int alignement;
+    int x, y;
     
 
     public Dès(){
@@ -44,12 +44,13 @@ public class Dès{
         frame.validate();
     }
 
-    public JLabel PlacementDès(int alignement){
+    public JLabel PlacementDès(int x, int y){
         String imgUrl= "image dès/" + this.face + "," + this.noJoueur + ".png";
         ImageIcon dèsIcon = new ImageIcon(imgUrl);
 
         //Création de JLable avec un alignement gauche
-        JLabel jlabel = new JLabel(dèsIcon, alignement);
+        JLabel jlabel = new JLabel(dèsIcon);
+        jlabel.setBounds(x, y, 100, 100);
         return jlabel;
     }
 
