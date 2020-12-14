@@ -4,6 +4,7 @@ import java.awt.event.*;
 public class AfficheExpedition {
 
     public static void main(String[] args) {
+        int nbJoueurs = 6;
         JFrame f = new JFrame("Création Expedition");
         f.setSize(700,700);
 
@@ -14,16 +15,19 @@ public class AfficheExpedition {
             public void actionPerformed(ActionEvent e){
                 JLabel nomExpLabel, difExpLabel;
 
-                Expedition e1 = new Expedition("Expedition 1", 7+(int)(Math.random() * ( 13 - 7 )));
+                for(int i=0; i<nbJoueurs; i++) {
 
-                nomExpLabel = new JLabel(e1.nom);
-                nomExpLabel.setBounds(100, 50, 100,30);
+                    Expedition ei = new Expedition("Expedition" + i, 7 + (int) (Math.random() * (13 - 7)));
 
-                difExpLabel = new JLabel("Ce expedition a un niveau de difficulte de : " + e1.difficulte);
-                difExpLabel.setBounds(100,100, 300, 30);
+                    nomExpLabel = new JLabel(ei.nom);
+                    nomExpLabel.setBounds(100, 50+i*25, 100, 30);
 
-                f.add(nomExpLabel);
-                f.add(difExpLabel);
+                    difExpLabel = new JLabel("Ce expedition a un niveau de difficulte de : " + ei.difficulte);
+                    difExpLabel.setBounds(100, 60+i*25, 300, 30);
+
+                    f.add(nomExpLabel);
+                    f.add(difExpLabel);
+                }
 
             }
         });
