@@ -27,7 +27,7 @@ public class Joueur{
         PopUp.setLayout(new FlowLayout());
         JLabel Text = new JLabel("Votre position dans la piste a augmenter de 1");
         PopUp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        PopUp.setSize(300, 300);
+        PopUp.setSize(300, 100);
         PopUp.setLocationRelativeTo(null);
         PopUp.add(Text);
         PopUp.add(okButton);
