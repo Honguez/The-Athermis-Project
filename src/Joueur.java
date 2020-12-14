@@ -3,7 +3,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class Joueur{
-    w
     final JFrame PopUp = new JFrame();
     final JFrame Selecteur = new JFrame();
     JButton okButton = new JButton("Ok");
